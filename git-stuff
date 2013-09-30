@@ -1,0 +1,108 @@
+From not staged - to commit to staging do: 
+git add . (not always desirable - sometimes better to do them separately)
+git add /filename/
+
+they are now staged
+
+to do a local commmit, do:
+git commit -m "commit message here"
+
+to check which branches there are do 
+git branch -a
+star will indicate which branch you're on
+
+to switch branches do 
+git checkout BRANCHNAME
+
+to create branches
+git checkout -b BRANCHNAME
+
+git fetch
+pulls the head - so remote branches etc
+
+git fetch --all 
+similar to above
+
+to commit to origin server do:
+git push origin master
+
+to check git status do:
+git status
+
+to pull latest version do:
+git pull
+
+if you add a file then want to remove it from commit list 
+git reset HEAD filename
+
+add file to .gitignore file in working directory to avoid having them ever committed. NNC recommended for all instances.
+
+if you fuck up a branch. SAFE
+git reset HEAD
+
+git reset --hard HEAD
+
+remove any untracked files in your local branch
+git clean -d -f  
+
+add all deleted files for commit (from renaming)
+git add -u . 
+
+
+To add stuff:
+
+0. git pull origin and branchname will update repo
+
+1. git status to see files changed and added
+
+2. git add and filenames
+
+3. git commit -m with message - this is committed locally
+
+4. git push origin then branch name will commit to main server
+
+
+To pull down:
+
+1. Go to directory
+
+2. git clone *url to pull down retrieved from gitlab after i've been given permission*
+
+
+
+To merge with dev branch DO THIS:
+
+1. Switch to branch - git checkout BRANCHNAME
+2. git pull 
+3. Merge - git merge BRANCHNAME
+4. Git status POST MERGE V IMPORTANT
+5. git push origin BRANCHNAME
+6. delete branch - git branch -D BRANCHNAME (forcibly deletes branch)
+
+
+
+After merging into dev delete the branch you've been working on, then create a new branch for more. Be sure to always pull before you create a new branch. 
+
+
+
+Grunt -
+
+go to appropriate directory
+
+grunt - run grunt
+
+grunt watch - watch files 
+
+grunt.cmd watch:less
+
+grunt.cmd watch - fire up the JS to get Active Kids running locally 
+
+
+
+Deploying assets to staging through Capistrano-
+
+Navigate to capistrano directory i.e. cd ActiveKids/capistrano, and then cap staging deploy:assets
+
+Deploying whole proj to staging through Capistrano-
+
+Navigate to capistrano directory i.e. cd ActiveKids/capistrano, and then cap staging deploy
